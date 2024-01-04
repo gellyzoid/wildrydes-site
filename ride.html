@@ -97,6 +97,32 @@
     <script src="js/cognito-auth.js"></script>
     <script src="js/esri-map.js"></script>
     <script src="js/ride.js"></script>
+     <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/geometry/Point"
+    ], function(Map, MapView, Point) {
+
+      // Specify the initial center for Manila, Philippines
+      var initialCenter = new Point({
+        x: 120.9842, // Longitude
+        y: 14.5995   // Latitude
+      });
+
+      var map = new Map({
+        basemap: "streets"
+      });
+
+      var view = new MapView({
+        container: "map",
+        map: map,
+        center: initialCenter,
+        zoom: 12
+      });
+
+    });
+  </script>
 </body>
 
 </html>
